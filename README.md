@@ -1,4 +1,4 @@
-## Documentation
+# Audio Mute
 
 Audio Mute is a simple program that allows you to toggle the mute state of a windows sound device using your own defined hotkeys.
 
