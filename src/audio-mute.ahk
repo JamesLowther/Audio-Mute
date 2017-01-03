@@ -70,7 +70,7 @@ if FileExist("Config.ini")
 	
 	if !DeviceNumber OR !MainToggle OR !SwitchMode OR !DisableToggle OR !MainToggleEnabled OR !SwitchModeEnabled OR !DisableToggleEnabled
 	{
-		Menu, TRAY, ICON, %A_ScriptDir%\Content\Icons\redcrosscircle.ico
+		Menu, TRAY, ICON, %A_ScriptDir%\resources\icons\cross-circle.ico
 		
 		errorfound := 0
 		
@@ -102,7 +102,7 @@ if FileExist("Config.ini")
 	
 	else
 	{
-		Menu, TRAY, ICON, %A_ScriptDir%\Content\Icons\redcrosscircle.ico
+		Menu, TRAY, ICON, %A_ScriptDir%\resources\icons\cross-circle.ico
 
 		errorfound := 0
 		modevalue := 0
@@ -114,14 +114,14 @@ if FileExist("Config.ini")
 	
 		if (MuteState = "On")
 		{
-			Menu, TRAY, ICON, %A_ScriptDir%\Content\Icons\blackcircle.ico
+			Menu, TRAY, ICON, %A_ScriptDir%\resources\icons\black-circle.ico
 		
 		return
 		}
 		
 		else if (MuteState = "Off")
 		{
-			Menu, TRAY, ICON, %A_ScriptDir%\Content\Icons\redcircle.ico
+			Menu, TRAY, ICON, %A_ScriptDir%\resources\icons\red-circle.ico
 		
 		return
 		}
@@ -131,21 +131,21 @@ if FileExist("Config.ini")
 			if (disablevalue = 1)
 			{
 				disablevalue = 0
-				SoundPlay, %A_ScriptDir%\Content\Audio\Turn Off.wav
+				SoundPlay, %A_ScriptDir%\resources\audio\keys-off.wav
 
 				Hotkey, %MainToggle%, On
 				Hotkey, %SwitchMode%, On
 				
 				if (modevalue = 0) && (MuteState = "On")
 				{
-					Menu, TRAY, ICON, %A_ScriptDir%\Content\Icons\blackcircle.ico
+					Menu, TRAY, ICON, %A_ScriptDir%\resources\icons\black-circle.ico
 					
 				return
 				}
 				
 				else if (modevalue = 0) && (MuteState = "Off")
 				{
-					Menu, TRAY, ICON, %A_ScriptDir%\Content\Icons\redcircle.ico
+					Menu, TRAY, ICON, %A_ScriptDir%\resources\icons\red-circle.ico
 				
 				return
 				}
@@ -153,7 +153,7 @@ if FileExist("Config.ini")
 				else if (modevalue = 1)
 				{
 				
-					Menu, TRAY, ICON, %A_ScriptDir%\Content\Icons\blackcircle.ico
+					Menu, TRAY, ICON, %A_ScriptDir%\resources\icons\black-circle.ico
 					SoundSet, 1, MASTER, MUTE, %DeviceNumber%
 				
 				return
@@ -165,8 +165,8 @@ if FileExist("Config.ini")
 			else if (disablevalue = 0)
 			{
 				disablevalue = 1
-				Menu, TRAY, ICON, %A_ScriptDir%\Content\Icons\purplecircle.ico
-				SoundPlay, %A_ScriptDir%\Content\Audio\Turn On.wav
+				Menu, TRAY, ICON, %A_ScriptDir%\resources\icons\purple-circle.ico
+				SoundPlay, %A_ScriptDir%\resources\audio\keys-on.wav
 				
 				Hotkey, %MainToggle%, Off
 				Hotkey, %SwitchMode%, Off
@@ -181,7 +181,7 @@ if FileExist("Config.ini")
 			if (modevalue = 1) && (disablevalue = 0)
 			{
 				modevalue = 0
-				SoundPlay, %A_ScriptDir%\Content\Audio\Mode Switch.wav
+				SoundPlay, %A_ScriptDir%\resources\audio\mode-switch.wav
 	
 			return
 			}
@@ -189,8 +189,8 @@ if FileExist("Config.ini")
 			else if (modevalue = 0) && (disablevalue = 0)
 			{
 				modevalue = 1
-				SoundPlay, %A_ScriptDir%\Content\Audio\Mode Switch.wav
-				Menu, TRAY, ICON, %A_ScriptDir%\Content\Icons\blackcircle.ico
+				SoundPlay, %A_ScriptDir%\resources\audio\mode-switch.wav
+				Menu, TRAY, ICON, %A_ScriptDir%\resources\icons\black-circle.ico
 				SoundSet, 1, MASTER, MUTE, %DeviceNumber%
 					
 			return
@@ -207,16 +207,17 @@ if FileExist("Config.ini")
 
 				if (MuteState = "On")
 				{
-					SoundPlay, %A_ScriptDir%\Content\Audio\Mic Off.wav
-					Menu, TRAY, ICON, %A_ScriptDir%\Content\Icons\blackcircle.ico
+					SoundPlay, %A_ScriptDir%\resources\audio\mic-off.wav
+					Menu, TRAY, ICON, %A_ScriptDir%\resources\icons\black-circle.ico
+					Menu, TRAY, ICON, %A_ScriptDir%\resources\icons\black-circle.ico
 					
 				return
 				}
 				
 				else if (MuteState = "Off")
 				{
-					SoundPlay, %A_ScriptDir%\Content\Audio\Mic On.wav
-					Menu, TRAY, ICON, %A_ScriptDir%\Content\Icons\redcircle.ico
+					SoundPlay, %A_ScriptDir%\resources\audio\mic-on.wav
+					Menu, TRAY, ICON, %A_ScriptDir%\resources\icons\red-circle.ico
 					
 				return
 				}
@@ -230,12 +231,12 @@ if FileExist("Config.ini")
 				{
 					if (GetKeyState(MainToggle,"P") = 1) && (modevalue = 1)
 					{
-						Menu, TRAY, ICON, %A_ScriptDir%\Content\Icons\bluecircle.ico
+						Menu, TRAY, ICON, %A_ScriptDir%\resources\icons\blue-circle.ico
 						Soundset, 0, MASTER, MUTE, %DeviceNumber%
 					}
 					else if (GetKeyState(MainToggle,"P") = 0) && (modevalue = 1)
 					{
-						Menu, TRAY, ICON, %A_ScriptDir%\Content\Icons\blackcircle.ico
+						Menu, TRAY, ICON, %A_ScriptDir%\resources\icons\black-circle.ico
 						Soundset, 1, MASTER, MUTE, %DeviceNumber%
 					}
 					
@@ -258,7 +259,7 @@ return
 
 else
 {
-	Menu, TRAY, ICON, %A_ScriptDir%\Content\Icons\redcrosscircle.ico
+	Menu, TRAY, ICON, %A_ScriptDir%\resources\icons\cross-circle.ico
 
 	IniWrite, 1, Config.ini, General, Sound Device Number
 	IniWrite, RAlt, Config.ini, Hotkeys, Main Toggle
@@ -279,7 +280,7 @@ ErrorCheck:
 
 errorfound := 1
 
-Menu, TRAY, ICON, %A_ScriptDir%\Content\Icons\redcrosscircle.ico
+Menu, TRAY, ICON, %A_ScriptDir%\resources\icons\cross-circle.ico
 
 MsgBox, 4, Invalid Hotkey, The hotkey '%errorkey%' is invalid. Reset to default?
 
