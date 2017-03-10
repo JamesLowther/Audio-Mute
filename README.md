@@ -7,7 +7,9 @@ It also includes a push-to-talk feature.
 Default hotkeys include:
 
 Right-Alt = Toggle Mute
+
 Shift-Q = Change Mode
+
 Shift-T = Disable Hotkey Detection
 
 ## Installing
