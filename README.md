@@ -28,6 +28,6 @@ A guide to find the startup folder can be found [here](http://www.thewindowsclub
 
 ## Other
 
-This is my first publically released coding project, so bugs are to be expected.
+This is my first publically released coding project.
 
 Thanks!
